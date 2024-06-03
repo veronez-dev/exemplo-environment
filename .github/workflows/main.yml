@@ -1,0 +1,12 @@
+name: Workflow Environment
+on:
+  workflow_dispatch: 
+jobs:
+  deploy_ambiente:
+    runs-on: ubuntu-latest
+    environment: desenvolvimento
+    steps:
+      - name: Execução do job em ambiente
+        run: |
+          echo "Variável do ambiente ${{ vars.VAR_AMBIENTE }}"
+          echo "Secret do ambiente ${{ secrets.SECRET_AMBIENTE }}"
